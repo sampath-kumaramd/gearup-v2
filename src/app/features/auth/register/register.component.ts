@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  isLoading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,8 +28,10 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
+      this.isLoading = true;
       this.authService.register(this.registerForm.value).subscribe(
         (response) => {
+          this.isLoading = false;
           if (response.status) {
             this.router.navigate(['/login']);
           } else {
@@ -36,6 +39,7 @@ export class RegisterComponent {
           }
         },
         (error) => {
+          this.isLoading = false;
           console.error('Registration failed', error);
           this.showErrorMessage('Registration failed. Please try again.');
         }

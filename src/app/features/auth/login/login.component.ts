@@ -11,6 +11,7 @@ import { AuthService } from '../../../core/services/auth.service';
 export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
+  isLoading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,9 +26,12 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
+      this.isLoading = true;
+      this.errorMessage = '';
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe(
         (response) => {
+          this.isLoading = false;
           if (response.status) {
             this.router.navigate(['/products']);
           } else {
@@ -36,6 +40,7 @@ export class LoginComponent {
           }
         },
         (error) => {
+          this.isLoading = false;
           console.error('Login failed', error);
           this.errorMessage = 'An error occurred. Please try again later.';
         }
