@@ -1,0 +1,42 @@
+<div
+  class="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat"
+  style="background-image: url('/api/placeholder/1920/1080')"
+>
+  <div class="bg-gray-100 p-8 rounded-lg shadow-md w-full max-w-md">
+    <div class="text-center mb-8">
+      <img src="assets/logo.jpg" alt="logo" class="w-20 mx-auto rounded-md" />
+      <h1 class="text-2xl font-semibold text-gray-800">Welcome back!</h1>
+      <p class="text-gray-400">Login to your account</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+      <div>
+        <input
+          type="text"
+          formControlName="email"
+          placeholder="USERNAME"
+          required
+          class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="PASSWORD"
+          required
+          class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+      >
+        LOGIN
+      </button>
+    </form>
+    <div *ngIf="errorMessage" class="mt-4 text-red-500 text-center">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

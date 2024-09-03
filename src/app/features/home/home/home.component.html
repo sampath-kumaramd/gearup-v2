@@ -1,0 +1,78 @@
+<!-- home.component.html -->
+<div class="min-h-screen bg-gray-50">
+  <!-- Hero Section -->
+  <div class="bg-white py-20">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-5xl font-bold mb-4 text-gray-800">Welcome to GearUp</h1>
+      <p class="text-xl mb-8 text-gray-600">
+        Your one-stop shop for all your outdoor adventure gear needs.
+      </p>
+      <div class="space-x-4 mt-8">
+        <a
+          routerLink="/login"
+          class="bg-teal-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-teal-600 transition duration-300"
+          >Login</a
+        >
+        <a
+          routerLink="/register"
+          class="bg-gray-200 text-gray-800 px-6 py-3 rounded-md font-semibold hover:bg-gray-300 transition duration-300"
+          >Register</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        Why Choose GearUp?
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">
+            Quality Products
+          </h3>
+          <p class="text-gray-600">
+            We offer only the best gear from top brands to ensure your outdoor
+            experiences are safe and enjoyable.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">
+            Competitive Prices
+          </h3>
+          <p class="text-gray-600">
+            Get the gear you need without breaking the bank. We offer great
+            value for every budget.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">
+            Expert Advice
+          </h3>
+          <p class="text-gray-600">
+            Our team of outdoor enthusiasts is here to help you find the perfect
+            gear for your next adventure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="bg-white py-16">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Ready to Gear Up?</h2>
+      <p class="text-xl mb-8 text-gray-600">
+        Join our community of outdoor enthusiasts and get access to exclusive
+        deals and expert advice.
+      </p>
+      <a
+        routerLink="/register"
+        class="bg-teal-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-teal-600 transition duration-300"
+        >Sign Up Now</a
+      >
+    </div>
+  </div>
+</div>

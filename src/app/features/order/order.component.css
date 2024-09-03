@@ -1,0 +1,26 @@
+.order-summary-item {
+  transition: background-color 0.3s ease;
+}
+
+.order-summary-item:hover {
+  background-color: #f3f4f6;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.place-order-btn {
+  transition: all 0.3s ease;
+}
+
+.place-order-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.place-order-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
